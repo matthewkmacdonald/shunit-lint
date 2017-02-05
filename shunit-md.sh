@@ -12,7 +12,7 @@ function shunittest_CheckFunctionLength() {
 }
 
 function shunittest_CheckLineLengh() {
-	grep -rn --include="$FILE_TYPE" '.\{'$LINE_LENGTH'\}' $SEARCH_PATH
+	grep -rn --include="$FILE_TYPE" '.\{'$LINE_LENGTH'\}' $SEARCH_PATH | cut -d":" -f1-2 | grep ""
 	if [ $? -eq 0 ]
 	then
 		echo "Line Length violation detected" >/dev/stderr
