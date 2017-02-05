@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ./shunit-md.conf
+source ./shunit-md.conf >/dev/null 2>&1
 
 function shunittest_CheckFunctionLength() {
 	flen -l $FUNCTION_LENGTH -d $BRACE_DEPTH -p $SEARCH_PATH -t $FILE_TYPE
